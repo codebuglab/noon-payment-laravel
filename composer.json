@@ -1,0 +1,28 @@
+{
+    "name": "codebuglab/noon-payment-laravel",
+    "description": "Integrate noon payment API with Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Elkomy",
+            "email": "mo.ah.elkomy@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeBugLab\\NoonPayment\\": "src/"
+        }
+    },
+    "keywords": [
+        "noon payment",
+        "online",
+        "api",
+        "php",
+        "laravel"
+    ]
+}
