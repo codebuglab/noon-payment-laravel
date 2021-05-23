@@ -10,7 +10,7 @@ class NoonPaymentController extends Controller
 
     public function index()
     {
-        $result = NoonPayment::getInstance()->initiate([
+        $response = NoonPayment::getInstance()->initiate([
             "order" => [
                 "reference" => "1",
                 "amount" => "10",
@@ -22,11 +22,11 @@ class NoonPaymentController extends Controller
             ]
         ]);
 
-        if ($result->resultCode == 0) {
-            return redirect($result->result->checkoutData->postUrl);
+        if ($response->resultCode == 0) {
+            return redirect($response->result->checkoutData->postUrl);
         }
 
-        return $result->message;
+        return $response->message;
     }
 
     public function response(Request $request)

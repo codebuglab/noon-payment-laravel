@@ -18,6 +18,13 @@
             "CodeBugLab\\NoonPayment\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodeBugLab\\NoonPayment\\NoonPaymentServiceProvider"
+            ]
+        }
+    },
     "keywords": [
         "noon payment",
         "online",

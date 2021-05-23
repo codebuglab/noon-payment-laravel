@@ -17,14 +17,17 @@ class NoonPaymentServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/config/noon_payment.php' => config_path('noon_payment.php'),
+        ], 'config');
+
+        $this->publishes([
             __DIR__ . '/Http/Controllers/NoonPaymentController.php' => app_path('Http/Controllers/NoonPaymentController.php')
-        ]);
+        ], 'controller');
     }
 
     public function register()
     {
-        $this->app->singleton('NoonPayment', function() {
-			return NoonPayment::getInstance();
-	    });
+        $this->app->singleton('NoonPayment', function () {
+            return NoonPayment::getInstance();
+        });
     }
 }

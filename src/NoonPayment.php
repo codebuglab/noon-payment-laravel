@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Like4Card API
- *
- * @author Mohamed Elkomy
- * @license MIT
- */
-
 namespace CodeBugLab\NoonPayment;
 
 use CodeBugLab\NoonPayment\Helper\CurlHelper;
@@ -15,6 +8,10 @@ class NoonPayment
 {
 
     private static $instance = null;
+
+    private function __construct() {
+
+    }
 
     public static function getInstance()
     {
