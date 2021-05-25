@@ -2,6 +2,7 @@
 [![Issues](https://img.shields.io/github/issues/codebuglab/noon-payment-laravel)](https://github.com/codebuglab/noon-payment-laravel/issues)
 [![Forks](https://img.shields.io/github/forks/codebuglab/noon-payment-laravel)](https://github.com/codebuglab/noon-payment-laravel/network/members)
 [![Stars](https://img.shields.io/github/stars/codebuglab/noon-payment-laravel)](https://github.com/codebuglab/noon-payment-laravel/stargazers)
+[![Stars](https://img.shields.io/packagist/dt/codebuglab/noon-payment-laravel)](https://packagist.org/packages/codebuglab/noon-payment-laravel)
 
 Integrate [NoonPayment](https://www.noonpayments.com/) API with Laravel
 
