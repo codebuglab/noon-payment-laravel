@@ -20,7 +20,7 @@ class NoonPaymentServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
-            __DIR__ . '/Http/Controller/NoonPaymentController.php' => app_path('Http/Controller/NoonPaymentController.php')
+            __DIR__ . '/Http/Controllers/NoonPaymentController.php' => app_path('Http/Controllers/NoonPaymentController.php')
         ], 'controller');
     }
 
