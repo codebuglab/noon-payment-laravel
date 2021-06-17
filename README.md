@@ -7,7 +7,7 @@ Integrate [NoonPayment](https://www.noonpayments.com/) API with Laravel
 [![Stars](https://img.shields.io/github/stars/codebuglab/noon-payment-laravel)](https://github.com/codebuglab/noon-payment-laravel/stargazers)
 [![Stars](https://img.shields.io/packagist/dt/codebuglab/noon-payment-laravel)](https://packagist.org/packages/codebuglab/noon-payment-laravel)
 
-![Laravel env](banner.png)
+![Noon Payment with laravel](banner.png)
 
 ## Table of contents <!-- omit in toc -->
 
