@@ -33,14 +33,20 @@ class NoonPaymentController extends Controller
     {
         $response = NoonPayment::getInstance()->getOrder($request->orderId);
 
-        if (
-            $response->result->transactions[0]->type == "SALE" &&
-            $response->result->transactions[0]->status == "SUCCESS"
-        ) {
+        if ($this->saleTransactionIsSuccess($response)) {
             //success
             return "Transaction Success";
         }
+
         // cancel
         return "Transaction Canceled";
+    }
+
+    private function saleTransactionIsSuccess($response)
+    {
+        return isset($response->result->transactions) &&
+            is_array($response->result->transactions) &&
+            $response->result->transactions[0]->type == "SALE" &&
+            $response->result->transactions[0]->status == "SUCCESS";
     }
 }
