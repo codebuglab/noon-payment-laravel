@@ -1,35 +1,51 @@
 {
-    "name": "codebuglab/noon-payment-laravel",
-    "description": "Integrate noon payment API with Laravel",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Mohamed Elkomy",
-            "email": "mo.ah.elkomy@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "php": ">=7.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "CodeBugLab\\NoonPayment\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "CodeBugLab\\NoonPayment\\NoonPaymentServiceProvider"
-            ]
-        }
-    },
-    "keywords": [
-        "noon payment",
-        "online",
-        "api",
-        "php",
-        "laravel"
+  "name": "codebuglab/noon-payment-laravel",
+  "description": "Integrate noon payment API with Laravel",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mohamed Elkomy",
+      "email": "mo.ah.elkomy@gmail.com"
+    }
+  ],
+  "keywords": [
+    "noon payment",
+    "online",
+    "api",
+    "php",
+    "laravel"
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "orchestra/canvas": "^6.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "CodeBugLab\\NoonPayment\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "CodeBugLab\\NoonPayment\\NoonPaymentServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit --testdox",
+    "test-f": "./vendor/bin/phpunit --testdox --filter",
+    "post-autoload-dump": [
+      "@php ./vendor/bin/testbench package:discover --ansi"
     ]
+  }
 }
