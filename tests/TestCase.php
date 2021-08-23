@@ -1,18 +1,16 @@
 <?php
 
-namespace CodeBugLab\NoonPayment\Tests;
+namespace Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use CodeBugLab\NoonPayment\NoonPaymentServiceProvider;
 
 abstract class TestCase extends BaseTestCase
 {
-    use RefreshDatabase;
-
     protected function getPackageProviders($app)
     {
         return [
-            //
+            NoonPaymentServiceProvider::class
         ];
     }
 }

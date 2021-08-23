@@ -4,7 +4,6 @@ namespace CodeBugLab\NoonPayment;
 
 use Illuminate\Support\ServiceProvider;
 
-
 class NoonPaymentServiceProvider extends ServiceProvider
 {
     public function boot()
@@ -26,7 +25,7 @@ class NoonPaymentServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton('NoonPayment', function () {
+        $this->app->bind('NoonPayment', function () {
             return NoonPayment::getInstance();
         });
     }

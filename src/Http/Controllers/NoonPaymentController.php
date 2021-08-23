@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use CodeBugLab\NoonPayment\NoonPayment;
 use Illuminate\Http\Request;
+use CodeBugLab\NoonPayment\NoonPayment;
 
 class NoonPaymentController extends Controller
 {

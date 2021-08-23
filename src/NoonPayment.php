@@ -6,11 +6,11 @@ use CodeBugLab\NoonPayment\Helper\CurlHelper;
 
 class NoonPayment
 {
-
     private static $instance = null;
 
-    private function __construct() {
-
+    private function __construct()
+    {
+        //
     }
 
     public static function getInstance()
@@ -21,7 +21,7 @@ class NoonPayment
         return self::$instance;
     }
 
-    function initiate($paymentInfo)
+    public function initiate($paymentInfo)
     {
         $paymentInfo['apiOperation'] = "INITIATE";
         $paymentInfo['order']['channel'] = config("noon_payment.channel");
@@ -40,7 +40,7 @@ class NoonPayment
         return json_decode(CurlHelper::post(config("noon_payment.payment_api") . "order", $paymentInfo, $header));
     }
 
-    function getOrder($orderId)
+    public function getOrder($orderId)
     {
         $header = [
             "Content-type: application/json",
