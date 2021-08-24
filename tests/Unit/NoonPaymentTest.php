@@ -21,7 +21,6 @@ class NoonPaymentTest extends TestCase
             ]
         ]);
 
-        dd($response);
-        $this->assertTrue(true);
+        $this->assertEquals("Processed successfully", $response->message);
     }
 }

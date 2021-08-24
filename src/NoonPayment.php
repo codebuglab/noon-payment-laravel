@@ -32,21 +32,19 @@ class NoonPayment
         // Options for payment action are (AUTHORIZE - SALE)
         $paymentInfo['configuration']['paymentAction'] = (!empty($paymentInfo['configuration']['paymentAction'])) ? $paymentInfo['configuration']['paymentAction'] : "SALE";
 
-        $header = [
-            "Content-type: application/json",
-            "Authorization: Key_" . config("noon_payment.mode") . " " . config("noon_payment.auth_key"),
-        ];
-
-        return json_decode(CurlHelper::post(config("noon_payment.payment_api") . "order", $paymentInfo, $header));
+        return json_decode(CurlHelper::post(config("noon_payment.payment_api") . "order", $paymentInfo, $this->getHeaders()));
     }
 
     public function getOrder($orderId)
     {
-        $header = [
+        return json_decode(CurlHelper::get(config("noon_payment.payment_api") . "order/" . $orderId, $this->getHeaders()));
+    }
+
+    private function getHeaders()
+    {
+        return [
             "Content-type: application/json",
             "Authorization: Key_" . config("noon_payment.mode") . " " . config("noon_payment.auth_key"),
         ];
-
-        return json_decode(CurlHelper::get(config("noon_payment.payment_api") . "order/" . $orderId, $header));
     }
 }

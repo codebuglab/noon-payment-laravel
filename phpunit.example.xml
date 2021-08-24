@@ -36,7 +36,6 @@
     <env name="NOON_PAYMENT_BUSINESS_ID" value="Test" />
     <env name="NOON_PAYMENT_APP_NAME" value="" />
     <env name="NOON_PAYMENT_APP_KEY" value="" />
-    <env name="NOON_PAYMENT_AUTH_KEY" value="" />
     <env name="NOON_PAYMENT_TOKEN_IDENTIFIER" value="" />
     <env name="NOON_PAYMENT_RETURN_URL" value="http://127.0.0.1:8000/noon_payment_response" />
     <env name="NOON_PAYMENT_MODE" value="Test" />

@@ -1,4 +1,4 @@
-# ⚡⚡⚡ Noon Payment with Laravel 
+# ⚡⚡⚡ Noon Payment with Laravel
 
 Integrate [NoonPayment](https://www.noonpayments.com/) API with Laravel
 
@@ -11,16 +11,18 @@ Integrate [NoonPayment](https://www.noonpayments.com/) API with Laravel
 
 ## Table of contents <!-- omit in toc -->
 
-- [Setup](#setup)
-  - [Installation](#installation)
-  - [Config](#config)
-- [Publish (optional)](#publish)
-- [Routes (optional)](#routes)
-- [Test Card](#testcard)
-- [Available API Methods](#avaliableapimethods)
-  - [Initiate](#initiate)
-  - [Get Order](#getorder)
-- [License](#license)
+- [⚡⚡⚡ Noon Payment with Laravel](#-noon-payment-with-laravel)
+  - [Setup](#setup)
+    - [Installation](#installation)
+    - [Config](#config)
+  - [Publish (optional)](#publish-optional)
+  - [Routes (optional)](#routes-optional)
+  - [Test Card](#test-card)
+  - [Available API Methods](#available-api-methods)
+    - [Initiate](#initiate)
+    - [Get Order](#get-order)
+  - [Notices](#notices)
+  - [License](#license)
 
 ## Setup
 ### Installation
@@ -33,20 +35,19 @@ composer require codebuglab/noon-payment-laravel
 
 ### Config
 
-Add your info to `.env` file
+Refer to [Noon docs](https://docs.noonpayments.com/start/authorization) to get your info then add them to `.env` file
 
 ```text
 NOON_PAYMENT_BUSINESS_ID=
 NOON_PAYMENT_APP_NAME=
 NOON_PAYMENT_APP_KEY=
-NOON_PAYMENT_AUTH_KEY=
 NOON_PAYMENT_TOKEN_IDENTIFIER=
 NOON_PAYMENT_RETURN_URL=http://127.0.0.1:8000/noon_payment_response
 # Change the mode to Live for the Production or set it as Test
 NOON_PAYMENT_MODE=Test
 # Pre-configured order route categories (the categories will be mentioned also in the initial setup email)
 NOON_PAYMENT_ORDER_CATEGORY=
-# Channels are pre-defined and limited to Web / Mobile (the channels will be mentioned also in the initial setup email) 
+# Channels are pre-defined and limited to Web / Mobile (the channels will be mentioned also in the initial setup email)
 NOON_PAYMENT_CHANNEL=web
 # Default value - Payment API Endpoint - Chooses
 # https://api.noonpayments.com/payment/v1/
@@ -63,7 +64,7 @@ Run this command in terminal to publish package files in your app
 php artisan vendor:publish --provider="CodeBugLab\NoonPayment\NoonPaymentServiceProvider"
 ```
 
-This will publish 2 files 
+This will publish 2 files
 
 ```php
 1- App/Http/Controllers/NoonPaymentController.php
