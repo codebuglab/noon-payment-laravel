@@ -1,0 +1,27 @@
+preset: package
+
+namespace: CodeBugLab\NoonPayment
+user-auth-provider: App\User
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: CodeBugLab\NoonPayment\Console
+
+model:
+  namespace: CodeBugLab\NoonPayment
+
+provider:
+  namespace: CodeBugLab\NoonPayment\Providers
+
+testing:
+  namespace: Tests

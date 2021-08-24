@@ -6,11 +6,11 @@ use CodeBugLab\NoonPayment\Helper\CurlHelper;
 
 class NoonPayment
 {
-
     private static $instance = null;
 
-    private function __construct() {
-
+    private function __construct()
+    {
+        //
     }
 
     public static function getInstance()
@@ -21,7 +21,7 @@ class NoonPayment
         return self::$instance;
     }
 
-    function initiate($paymentInfo)
+    public function initiate($paymentInfo)
     {
         $paymentInfo['apiOperation'] = "INITIATE";
         $paymentInfo['order']['channel'] = config("noon_payment.channel");
@@ -32,21 +32,19 @@ class NoonPayment
         // Options for payment action are (AUTHORIZE - SALE)
         $paymentInfo['configuration']['paymentAction'] = (!empty($paymentInfo['configuration']['paymentAction'])) ? $paymentInfo['configuration']['paymentAction'] : "SALE";
 
-        $header = [
-            "Content-type: application/json",
-            "Authorization: Key_" . config("noon_payment.mode") . " " . config("noon_payment.auth_key"),
-        ];
-
-        return json_decode(CurlHelper::post(config("noon_payment.payment_api") . "order", $paymentInfo, $header));
+        return json_decode(CurlHelper::post(config("noon_payment.payment_api") . "order", $paymentInfo, $this->getHeaders()));
     }
 
-    function getOrder($orderId)
+    public function getOrder($orderId)
     {
-        $header = [
+        return json_decode(CurlHelper::get(config("noon_payment.payment_api") . "order/" . $orderId, $this->getHeaders()));
+    }
+
+    private function getHeaders()
+    {
+        return [
             "Content-type: application/json",
             "Authorization: Key_" . config("noon_payment.mode") . " " . config("noon_payment.auth_key"),
         ];
-
-        return json_decode(CurlHelper::get(config("noon_payment.payment_api") . "order/" . $orderId, $header));
     }
 }
