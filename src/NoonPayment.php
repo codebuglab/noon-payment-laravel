@@ -28,7 +28,7 @@ class NoonPayment
         $paymentInfo['order']['category'] = config("noon_payment.order_category");
         // Options for tokenize cc are (true - false)
         $paymentInfo['configuration']['tokenizeCc'] = (!empty($paymentInfo['configuration']['tokenizeCc'])) ? $paymentInfo['configuration']['tokenizeCc'] : "true";
-        $paymentInfo['configuration']['returnUrl'] = config('noon_payment.return_url');
+        $paymentInfo['configuration']['returnUrl'] = (!empty($paymentInfo['configuration']['returnUrl'])) ? $paymentInfo['configuration']['returnUrl'] : config('noon_payment.return_url');
         // Options for payment action are (AUTHORIZE - SALE)
         $paymentInfo['configuration']['paymentAction'] = (!empty($paymentInfo['configuration']['paymentAction'])) ? $paymentInfo['configuration']['paymentAction'] : "SALE";
 
